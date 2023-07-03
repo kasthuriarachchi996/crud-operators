@@ -5,6 +5,8 @@ import com.crudoperators.crud.couese.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/vi/user")
 @CrossOrigin
@@ -17,5 +19,10 @@ public class UserController {
     private UserDto SaveUser(@RequestBody UserDto userDto)
     {
         return userService.saveuser(userDto);
+    }
+
+    @GetMapping("/getallusers")
+    private List<UserDto> getallusers(){
+        return userService.getallusers();
     }
 }
