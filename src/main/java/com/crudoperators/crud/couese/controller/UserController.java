@@ -21,12 +21,14 @@ public class UserController {
         return userService.saveuser(userDto);
     }
 
-    @GetMapping("/getallusers")
+    @GetMapping("getallusers")
     private List<UserDto> getallusers(){
         return userService.getallusers();
     }
 
-    public UserDto updateuser(@RequestBody UserDto userDto){
+    @PutMapping("/saveuser")
+    private UserDto updateuser(@RequestBody UserDto userDto)
+    {
         return userService.updateuser(userDto);
     }
 }
